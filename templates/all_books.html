@@ -1,0 +1,69 @@
+{% include "header.html" %}
+ 
+<!-- {% block title %}
+All Books 
+{% endblock %} -->
+
+
+    <!-- search and filter section -->
+    <div class="search-filter-container">
+        <!-- search bar -->
+        <div class="search-box">
+            <form action="{{ url_for('search') }}" method="POST">
+                <div class="search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                    <input type="text" name="search" placeholder="search">
+                </div>
+            </form>
+        </div>
+
+        <!-- Filter button -->
+        <div class="filter-button">
+            <form action="{{ url_for('show_all_books') }}" method="POST" id="filterForm">
+                <select name="selected_category" id="category" onchange="document.getElementById('filterForm').submit();">
+                    <option disabled="" selected="">Category</option>
+                    {% for book in categories %}
+                    <option value="{{book['category']}}">{{book['category']}}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <div class="card-section">
+      {% for book in book_details %}
+        <div class="card">
+            <div class="header">
+                <!-- <span></span> -->
+                <img src="{{ book.gravatar_url }}" alt="Author gravatar" class="gravatar">
+                <div class="box">
+                    <h2>{{ book.authors[:20] }}...</h2>
+                    <p>{{ book.category }}</p>
+                </div>
+            </div>
+            <div class="image">
+                <img src="{{ book.cover_img }}" alt="Book cover">
+            </div>
+            <div class="details">
+                <h3>{{ book.title }}</h3>
+                <p>{{ book.description }}</p>
+            </div>
+            <div class="buttons">
+               <a href="{{ url_for('book_details', book_id=book.book_id) }}" class="get-book">Get This Book</a>
+            </div>
+            {% if is_admin %}
+            <div class="delete">
+               <a href="{{ url_for('delete_book', book_id=book.book_id) }}" class="delete-book">✖</a>
+            </div>
+            {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+  </body>
+</html>
+

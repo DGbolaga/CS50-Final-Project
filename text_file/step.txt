@@ -1,0 +1,17 @@
+1. Assemble the frontend as seen in the Figma design
+2.  Using the following categories and google books api, create a sql database that stores  (id, title, authors, description, category, cover_image, location_of_seller, format_of_book, ratings, user_who_added_the_file):
+    Computer Science
+    Law
+    Cybersecurity
+    Medicine and Surgery
+    Artificial Intelligence and Robotics
+    Data Science
+3.  convert the books data in the csv file to a sql database.
+4.  Add a filter by categories option for the user.
+5.  Create an enlist page for users to sell their books.
+        - include, book_title, book_description, category
+        - Authors, Book Format, Location of the seller, and
+        - book-price.
+7.  Authentication:
+        a. Create table for users in books.db and enable authentication
+        B. Restrict delete feature to only admins.

@@ -1,0 +1,90 @@
+{% include "header.html" %}
+ 
+<!-- {% block title %}
+Room 
+{% endblock %} -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.querySelector('select[name="category"]');
+        const otherCategoryGroup = document.getElementById('other-category-group');
+
+        categorySelect.addEventListener('change', function() {
+            if (this.value === 'other') {
+                otherCategoryGroup.style.display = 'block';
+            } else {
+                otherCategoryGroup.style.display = 'none';
+            }
+        });
+    });
+</script>
+<body>
+<div class="custom-container" style="padding: 0px 60px; background-color: rgb(188, 236, 236);">
+    <div class="row">
+        <div class="col login-container" style="align-self: flex-start;">
+            <h1>Book Listing Form</h1>
+            <form action="{{ url_for('sell_books') }}" method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    {{ form.title(class="form-control", placeholder="Enter the book title") }}
+                </div>
+                <div class="form-group">
+                    <label for="authors">Author(s)</label>
+                    {{ form.authors(class="form-control", placeholder="Enter the author's name(s)") }}
+                </div>
+                <div class="form-group">
+                    <label for="description">Brief Description</label>
+                    {{ form.description(class="form-control", placeholder="Enter a brief description of the book", rows=5) }}
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    {{ form.category(class="form-control", placeholder="Select a category", choices=[
+                        ('', 'Select a category'),
+                        ('computer_science', 'Computer Science'),
+                        ('law', 'Law'),
+                        ('economics', 'Economics'),
+                        ('cybersecurity', 'Cybersecurity'),
+                        ('medicine_and_surgery', 'Medicine and Surgery'),
+                        ('artificial_intelligence_and_robotics', 'Artificial Intelligence and Robotics'),
+                        ('data_science', 'Data Science'),
+                        ('mathematics', 'Mathematics'),
+                        ('other', 'Other')
+                    ]) }}
+                </div>
+                <div class="form-group" id="other-category-group" style="display: none;">
+                    <label for="other_category">Other Category</label>
+                    {{ form.other_category(class="form-control", placeholder="Specify other category") }}
+                </div>
+                <div class="form-group">
+                    <label for="book_format">Book Format</label>
+                    {{ form.book_format(class="form-control", placeholder="Select format", choices=[
+                        ('', 'Select format'),
+                        ('hard_copy', 'Hard Copy'),
+                        ('soft_copy', 'Soft Copy')
+                    ]) }}
+                </div>
+                <div class="form-group">
+                    <label for="location">Location </label>
+                    {{ form.location(class="form-control", placeholder="Enter the name of the place") }}
+                </div>
+                <div class="form-group">
+                    <label for="cover_img">Book Thumbnail</label>
+                    {{ form.cover_img(class="form-control", placeholder="Enter the Book Thumbnail URL") }}
+                </div>
+                <div class="form-group">
+                    <label for="ratings">Ratings</label>
+                    {{ form.ratings(class="form-control", placeholder="How would you rate the book?", choices=[
+                        ('1', '⭐'),
+                        ('2', '⭐⭐'),
+                        ('3', '⭐⭐⭐'),
+                        ('4', '⭐⭐⭐⭐'),
+                        ('5', '⭐⭐⭐⭐⭐')
+                    ]) }}
+                </div>
+                
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+        </div>
+    </div>
+</div>

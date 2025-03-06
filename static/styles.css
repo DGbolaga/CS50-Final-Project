@@ -1,0 +1,403 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-style: 'normal';
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background-color: white;
+}
+
+header .brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "IBM Plex Serif", serif;
+  font-style: normal;
+  color: brown;
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  height: 100vh; /* Adjusts the main section height to fill the viewport */
+}
+
+.left {
+  flex: 1;
+  background-image: url('bg.png'); /* Replace with your pattern image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: sharp; /* Ensures clarity */
+}
+
+.right {
+  flex: 1;
+  background-color: white; /* Or any other styling you need */
+  width: 50%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+}
+
+
+
+.login-container, .signup-container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.info1 {
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+
+/* Add this to style the price input consistently */
+/* .price_input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white; 
+  cursor: pointer; 
+} */
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(165, 42, 42, 0.801);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: brown;
+}
+
+.info2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: rgb(248, 3, 3);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* all_books styles */
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 1rem 6rem;
+  background-color: white;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+.card .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .header img.gravatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #000000;
+}
+
+.card .header h2 {
+  font-size: 11px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card .header p {
+  font-size: 10px;
+  margin: 0;
+}
+
+.card .image {
+  width: 100%;
+  height: 170px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  margin: 10px 0;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+.card .image img {
+  width: 100%;      /* Make the image fill the width */
+  height: 100%;     /* Make the image fill the height */
+  object-fit: cover; /* Ensures the image is cropped to fit */
+  border-radius: 2px; /* Optional: matches the container's radius */
+}
+
+
+.card .details {
+  text-align: left;
+}
+
+.card .details h3 {
+  font-size: 14px;
+  margin: 0 0 5px 0;
+}
+
+.card .details p {
+  margin: 5px 0;
+  color: #777;
+  font-size: 13px;
+}
+
+.card .buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.card .delete {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+
+.card .get-book {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  font-size: 13px;
+  cursor: pointer;
+  background: #333;
+  color: #fff;
+}
+
+
+.card .header .box {
+  align-items: right;
+}
+
+.search {
+  position: relative;
+}
+
+.search input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-left: 30px;
+}
+
+.search svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.search-box{
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 90px;
+}
+
+.search {
+  width: auto;
+}
+
+.filter-button {
+  position: relative;
+  display: inline-block;
+  padding-left: 0px;
+}
+
+.filter-button select {
+  width: 100px; /* Match the width of the search input */
+  padding:10px; /* Match the padding of the search input */
+  border-radius: 5px; /* Match the border radius */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Match the box shadow */
+  appearance: none; /* Remove default styling */
+  background: white; /* Set background color */
+}
+
+/* Add a custom arrow for the select dropdown */
+.filter-button::after {
+  content: '▼'; /* Custom arrow */
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent interaction */
+}
+
+/* room style */
+.book-information {
+  font-family: 'Poppins', 'san-serif';
+}
+
+.book-information h2 {
+  font-size: 25px;
+}
+
+.book-information p {
+  margin-bottom: 30px;
+}
+
+.ratings {
+  width: 150px;
+  margin-top: 20px;
+  margin-left: 230px;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+/* .ratings h3 {
+  margin-bottom: 0px;
+  font-size: 15px;
+} */
+
+.stars {
+  font-size: 20px;
+  color: #FFD700; /* Gold color for stars */
+}
+
+
+
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.input-group button {
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: gray; /* Set button background to gray */
+    color: white; /* Set text color to white for contrast */
+    font-weight: bold; /* Make text bold */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Add this to style the description input */
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  height: 150px; /* Set a larger height for the description input */
+  resize: none; /* Prevent resizing */
+}
+
+/* Add this to style the placeholder text for textareas */
+.form-control::placeholder {
+    font-family: 'Poppins', sans-serif; /* Match the font style */
+    font-size: 16px; /* Match the font size */
+    color: #aaa; /* Optional: Change the color of the placeholder */
+}
+
+
+
+.brand a {
+  text-decoration: none;
+  color: brown;
+}
+
+
+.flash {
+  padding: 0 10px;
+  background-color: white;
+  color: red;
+  text-align: center;
+}

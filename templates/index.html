@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBOOK</title>
+
+    <!--  Google Fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+    <link href="static/welcome_page.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <div class="brand">MyBOOK</div>
+
+      <nav>
+        <ul>
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('about')}}">About</a></li>
+          <li><a href="{{url_for('contact')}}">Contact</a></li>
+        </ul>
+      </nav>
+  </header>
+
+    <div class="main">
+
+      <div class="left">
+        <div class="stripped-background">
+          <div>
+            <h1>Welcome to <span>MyBOOK</span></h1>
+            <p>Simplify Your Study Life - Rent and Earn with Ease!</p>
+            <button><a href="{{url_for('about')}}" style="color: white; text-decoration: none;">Learn more</a></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right"></div>
+    </div>
+  </body>
+</html>
+
